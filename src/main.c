@@ -41,8 +41,8 @@ int save (int *a, int check)
         }
         
     fprintf(file,"\0");
+    fclose(file);
     print_exit();
-    exit(0);
     return 0;
 }
 
@@ -77,6 +77,7 @@ int read(int check)
     //     printf("%d\t",temp[j]);
     //     j++;
     // }
+    fclose(file);
     return 1;
 }
 
@@ -127,7 +128,7 @@ int main(){
             scanf(" %ld %ld", &pri_key, &mod_n);
         }
         else{
-            printf("Would you like to decrypt using custom encryption keys?\n If yes, press 1 \nElse to encrypt using recently generated keys, Enter any key\n");
+            printf("Would you like to decrypt using custom encryption keys?\n If yes, press 1 \nElse to decrypt using recently generated keys, Enter any key\n");
             scanf(" %d", &choose_2);
             if(choose_2 == 1){
                 printf("Enter private key(d) and modulo(n):\n");
